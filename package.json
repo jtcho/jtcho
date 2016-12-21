@@ -1,0 +1,24 @@
+{
+  "name": "jtcho.me",
+  "version": "0.0.1",
+  "description": "Personal website.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jtcho",
+  "license": "ISC",
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}
