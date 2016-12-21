@@ -1,0 +1,191 @@
+@import '../../../node_modules/include-media/dist/_include-media.scss';
+
+$breakpoints: (
+        phone: 450px,
+        tablet: 680px,
+        desktop: 1024px
+);
+
+@font-face {
+  font-family: "Avenir Book";
+  src: url('../fonts/avenir-book.otf');
+}
+
+@font-face {
+  font-family: "Avenir Light";
+  src: url('../fonts/avenir-light.otf');
+}
+
+@font-face {
+  font-family: "Avenir Heavy";
+  src: url('../fonts/avenir-heavy.otf');
+}
+
+body, html {
+  width: 100%;
+  margin: 0;
+  background-color: #F7F7F7;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+.nav {
+
+  height: 70px;
+  background-color: #E6E6E6;
+
+  .navbar {
+    margin: 0 auto;
+    height: 100%;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .item {
+      font-size: 20px;
+      font-family: "Avenir Light", Arial, sans-serif;
+      font-weight: 100;
+      flex: 1;
+      text-decoration: none;
+      color: #3A3A3A;
+    }
+
+    .item:after {
+      position: relative;
+      display: block;
+      width: 0%;
+      height: 2px;
+      background-color:#3A3A3A;
+      bottom: -2px;
+      content: "";
+      left: 50%;
+      transition: 0.4s;
+      text-align:center;
+    }
+  }
+
+}
+
+.container {
+
+  width: 80%;
+  margin: 0 auto;
+  user-select: none;
+
+  .splash {
+
+    margin-top: 225px;
+    z-index: 10;
+    position: absolute;
+
+    h1 {
+      font-family: "Avenir Heavy", Arial, sans-serif;
+      font-weight: 200;
+      font-size: 140px;
+      color: #393939;
+      margin: 0;
+      position: relative;
+      top: 30px;
+    }
+
+    h2 {
+      color: #8A8A8A;
+      font-family: "Avenir Book", Arial, sans-serif;
+      font-size: 30px;
+      font-weight: 100;
+      margin: 0;
+      position: relative;
+      left: 100px;
+    }
+  }
+  .screen {
+    font-family: "Avenir Heavy", Arial, sans-serif;
+    font-weight: 200;
+    color: #F2F2F2;
+    font-size: 500px;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@include media("<=phone") {
+  .nav {
+    .navbar {
+      width: 90%;
+
+      .item {
+        font-size: 15px;
+      }
+      .item:hover:after {
+        width: 60%;
+        left: 20%;
+      }
+    }
+  }
+
+  .container {
+    .splash {
+      h1 {
+        font-size: 120px;
+      }
+      h2 {
+        font-size: 30px;
+        left: 30px;
+        width: 300px;
+      }
+    }
+  }
+}
+
+@include media(">phone") {
+  .nav {
+    .navbar {
+      width: 90%;
+
+      .item:hover:after {
+        width: 50%;
+        left: 25%;
+      }
+    }
+  }
+
+  .container {
+    .splash {
+      text-align: center;
+
+      h2 {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@include media(">desktop") {
+  .nav {
+    .navbar {
+      width: 60%;
+
+      .item:hover:after {
+        width: 35%;
+        left: 32.5%;
+      }
+    }
+
+  }
+  .container {
+    .splash {
+      h2 {
+        width: 100%;
+      }
+    }
+  }
+}
