@@ -26,7 +26,7 @@ body, html {
   width: 100%;
   height: 100%;
   margin: 0;
-  background-color: #F7F7F7;
+  //background-color: #F7F7F7;
 }
 
 html {
@@ -81,14 +81,14 @@ html {
 
   .splash {
 
-    margin-top: 225px;
+    margin-top: 185px;
     z-index: 10;
     position: absolute;
 
     h1 {
       font-family: "Avenir Heavy", Arial, sans-serif;
       font-weight: 200;
-      font-size: 140px;
+      font-size: 180px;
       color: #393939;
       margin: 0;
       position: relative;
@@ -102,7 +102,7 @@ html {
       font-weight: 100;
       margin: 0;
       position: relative;
-      left: 120px;
+      left: 90px;
     }
   }
   .screen {
@@ -118,7 +118,23 @@ html {
     z-index: 0;
     width: 100%;
     overflow: hidden;
+    opacity: 0;
   }
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/bridge_bg.png');
+  background-size:cover;
+  transform: scaleX(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.025;
+  z-index: -1;
 }
 
 .footer {
