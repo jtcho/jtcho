@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
 var livereload = require('gulp-livereload');
 var spawn = require('child_process').spawn;
-var swig = require('gulp-swig');
+var nunjucks = require('gulp-nunjucks');
 var node;
 
 gulp.task('sass', function() {
@@ -27,7 +27,7 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src('./src/**/*.html')
-    .pipe(swig())
+    .pipe(nunjucks.compile())
     .pipe(gulp.dest('./dist'))
     .pipe(livereload());
 });
