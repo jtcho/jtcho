@@ -24,6 +24,7 @@ $breakpoints: (
 
 body, html {
   width: 100%;
+  height: 100%;
   margin: 0;
   background-color: #F7F7F7;
 }
@@ -74,7 +75,7 @@ html {
 .container {
 
   width: 80%;
-  height: calc(80% + 44px);
+  height: calc(80%);
   margin: 0 auto;
   user-select: none;
 
@@ -122,8 +123,7 @@ html {
 .footer {
   height: 44px;
   width: 100%;
-  position: absolute;
-  bottom: 30px;
+  margin-bottom: 30px;
 
   .media {
     position: relative;
