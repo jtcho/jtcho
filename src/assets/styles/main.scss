@@ -1,6 +1,7 @@
 @import '../../../node_modules/include-media/dist/_include-media.scss';
 
 $breakpoints: (
+        small: 320px,
         phone: 450px,
         tablet: 680px,
         desktop: 1024px
@@ -23,7 +24,6 @@ $breakpoints: (
 
 body, html {
   width: 100%;
-  height: 100%;
   margin: 0;
   background-color: #F7F7F7;
 }
@@ -172,7 +172,66 @@ html {
   }
 }
 
-@include media("<=phone") {
+/* CUSTOM DEVICE CSS */
+
+@include media("<=small") {
+
+  .nav {
+
+    .navbar {
+      width: 90%;
+      .item {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .container {
+    text-align: center;
+    .splash {
+      margin-top: 180px;
+      position: relative;
+
+      h1 {
+        font-size: 70px;
+        top: 0;
+      }
+
+      h2 {
+        font-size: 15px;
+        margin: 0 0 0 0;
+        position: static; // Needs to be reset.
+      }
+    }
+
+    .screen {
+      display: none;
+    }
+  }
+
+  .footer {
+    .media {
+      width: 100px !important;
+      .item {
+        width: 20px;
+        height: 20px;
+      }
+      .social-github {
+        background-size: 20px 20px !important;
+      }
+
+      .social-linkedin {
+        background-size: 20px 20px !important;
+      }
+
+      .social-instagram {
+        background-size: 20px 20px !important;
+      }
+    }
+  }
+}
+
+@include media(">small", "<=phone") {
   .nav {
     .navbar {
       width: 90%;
