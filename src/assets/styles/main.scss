@@ -2,8 +2,7 @@
 
 $breakpoints: (
         small: 320px,
-        phone: 450px,
-        tablet: 680px,
+        phone: 530px,
         desktop: 1024px
 );
 
@@ -79,6 +78,14 @@ html {
   margin: 0 auto;
   user-select: none;
 
+  .coming-soon {
+    margin-top: 275px;
+    text-align: center;
+    font-family: "Avenir Heavy", Arial, sans-serif;
+    font-size: 3em;
+    color: #393939;
+  }
+
   .splash {
 
     margin-top: 185px;
@@ -145,7 +152,7 @@ html {
   .media {
     position: relative;
     height: 100%;
-    width: 184px;
+    width: 150px;
     //background-color: black;
     margin: 0 auto;
     display: flex;
@@ -155,8 +162,8 @@ html {
 
     .item {
       opacity: 0.4;
-      width: 44px;
-      height: 44px;
+      width: 35px;
+      height: 35px;
       transition: 0.5s;
       flex: 1;
 
@@ -164,21 +171,21 @@ html {
         width: 100%;
         height: 100%;
         background: url('../images/badge_github.png') no-repeat;
-        background-size: 44px 44px;
+        background-size: 35px 35px;
       }
 
       .social-linkedin {
         width: 100%;
         height: 100%;
         background: url('../images/badge_in.svg') no-repeat;
-        background-size: 44px 44px;
+        background-size: 35px 35px;
       }
 
       .social-instagram {
         width: 100%;
         height: 100%;
         background: url('../images/badge_instagram.png') no-repeat;
-        background-size: 44px 44px;
+        background-size: 35px 35px;
       }
 
     }
@@ -205,6 +212,9 @@ html {
 
   .container {
     text-align: center;
+    .coming-soon {
+      font-size: 1.5em;
+    }
     .splash {
       margin-top: 180px;
       position: relative;
@@ -264,6 +274,9 @@ html {
   }
 
   .container {
+    .coming-soon {
+      font-size: 2em;
+    }
     .splash {
       margin-top: 180px;
 
@@ -279,7 +292,7 @@ html {
   }
 }
 
-@include media(">phone") {
+@include media(">phone", "<desktop") {
   .nav {
     .navbar {
       width: 90%;
@@ -292,6 +305,9 @@ html {
   }
 
   .container {
+    .coming-soon {
+      font-size: 2.5em;
+    }
     .splash {
       text-align: center;
 

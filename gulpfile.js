@@ -5,6 +5,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-ruby-sass');
 var livereload = require('gulp-livereload');
 var spawn = require('child_process').spawn;
+var swig = require('gulp-swig');
 var node;
 
 gulp.task('sass', function() {
@@ -14,19 +15,21 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src("./src/**/*.js")
+  return gulp.src('./src/**/*.js')
     .pipe(sourcemaps.init())
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(concat("bundle.js"))
+    .pipe(concat('bundle.js'))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("./dist"));
 });
 
 gulp.task('html', function() {
-  gulp.src('./src/**/*.html')
-    .pipe(gulp.dest('./dist'));
+  return gulp.src('./src/**/*.html')
+    .pipe(swig())
+    .pipe(gulp.dest('./dist'))
+    .pipe(livereload());
 });
 
 gulp.task('fonts', function() {
@@ -45,6 +48,7 @@ gulp.task('build', ['fonts', 'images', 'sass', 'js', 'html'])
 gulp.task('watch', function() {
   livereload.listen();  // Actually start the LiveReload listener.
   gulp.watch('./src/assets/styles/**/*.scss', ['sass']);
+  gulp.watch('./src/**/*.html', ['html']);
 });
 
 gulp.task('server', function() {
@@ -62,8 +66,10 @@ gulp.task('server', function() {
   livereload.reload();
 });
 
-gulp.task('develop', ['watch', 'server'], function() {
-  gulp.watch(['./src/assets/styles/**/*.scss', './src/**/*.html'], ['build']);
+gulp.task('develop', ['build', 'server'], function() {
+  livereload.listen();
+  gulp.watch(['./src/assets/styles/**/*.scss', './src/**/*.html'],
+      ['build']);
 });
 
 gulp.task('default', ['build']);
