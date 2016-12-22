@@ -35,7 +35,12 @@ gulp.task('fonts', function() {
     .pipe(livereload());
 });
 
-gulp.task('build', ['fonts', 'sass', 'js', 'html'])
+gulp.task('images', function() {
+  gulp.src('./src/assets/images/*')
+      .pipe(gulp.dest('./dist/assets/images'));
+})
+
+gulp.task('build', ['fonts', 'images', 'sass', 'js', 'html'])
 
 gulp.task('watch', function() {
   livereload.listen();  // Actually start the LiveReload listener.
