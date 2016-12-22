@@ -1,0 +1,39 @@
+.container {
+  width: 700px;
+  margin: 0 auto;
+  display : flex;
+  align-items : center;
+
+  .me {
+    width: 200px;
+    height: 200px;
+    background: url('../images/headshot.png') center;
+    background-size: 100%;
+    transition: 0.5s;
+    border-radius: 100%;
+    opacity: 0.96;
+  }
+
+  .me:hover {
+    opacity: 1.0;
+  }
+
+  .bio {
+    width: calc(100% - 285px);
+    margin-left: 60px;
+
+    h1 {
+      font-family: "Avenir Heavy", Arial, sans-serif;
+      font-weight: 200;
+      font-size: 56px;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-family: "Avenir Light", Arial, sans-serif;
+      font-weight: 100;
+      line-height: 24px;
+    }
+  }
+
+}
