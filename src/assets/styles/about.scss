@@ -4,12 +4,11 @@ $breakpoints: (
   tablet: 700px
 );
 
-.content {
+.container {
   width: 700px;
   margin: 0 auto;
   display : flex;
   align-items : center;
-  height: 80%;
 
   .me {
     width: 200px;
@@ -46,12 +45,11 @@ $breakpoints: (
 }
 
 @include media("<tablet") {
-  .content {
+  .container {
     width: 100%;
     height: auto;
     display: block;
     padding-bottom: 40px;
-    //overflow:auto;
 
     .me {
       margin: 20px auto 0 auto;
