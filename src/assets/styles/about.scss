@@ -40,6 +40,18 @@ $breakpoints: (
       font-weight: 100;
       line-height: 24px;
     }
+
+    a {
+      text-decoration: none;
+      color: #18a3ff;
+      font-weight: 500;
+      opacity: 0.6;
+      transition: 0.5s;
+    }
+
+    a:hover{
+      opacity: 1.0;
+    }
   }
 
 }
