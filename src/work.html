@@ -8,14 +8,49 @@
     <script src="bundle.js"></script>
     <!-- Styles -->
     <link rel="stylesheet" href="assets/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="assets/styles/work.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <title>JT Cho</title>
 </head>
 <body>
 {% include 'partials/nav.html' %}
-<main class="container">
-    {% include 'partials/coming_soon.html' %}
+<main class="container animated fadeIn">
+    <div class="card-col">
+        <h2><b>Notable Work Experience</b></h2>
+    </div>
+    <div class="card-col">
+        <div class="card">
+            <p><b>Software Engineer</b><br>
+                <a href="https://affirm.com" target="_blank">@Affirm</a><br>
+                starting 7.17</p>
+        </div>
+        <div class="card">
+            <p><b>CIS 700/3 Teaching Assistant</b><br>
+                <a href="http://cis.upenn.edu/~zives/bigdata/" target="_blank">@University of Pennsylvania</a><br>
+                1.17 - 5.17</p>
+        </div>
+        <div class="card">
+            <p><b>CIS 320 Teaching Assistant</b><br>
+                <a href="#">@University of Pennsylvania</a><br>
+                1.17 - 5.17</p>
+        </div>
+        <div class="card">
+            <p><b>Software Engineering Intern</b><br>
+                <a href="https://linkedin.com" target="_blank">@LinkedIn</a><br>
+                5.16 - 8.16</p>
+        </div>
+        <div class="card">
+            <p><b>CIS 121 Teaching Assistant</b><br>
+                <a href="https://www.cis.upenn.edu/~cis121/current/" target="_blank">@University of Pennsylvania</a><br>
+                12.14 - 5.16</p>
+        </div>
+        <div class="card">
+            <p><b>Software Engineering Intern</b><br>
+                <a href="https://www.cloudlock.com/" target="_blank">@Cloudlock</a><br>
+                5.15 - 8.15</p>
+        </div>
+    </div>
 </main>
 <div class="canvas"></div>
 {% include 'partials/footer.html' %}
