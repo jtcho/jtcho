@@ -8,6 +8,12 @@ var spawn = require('child_process').spawn;
 var nunjucks = require('gulp-nunjucks');
 var node;
 
+gulp.task('css', function() {
+  return gulp.src('./src/assets/styles/**/*.css')
+      .pipe(gulp.dest('./dist/assets/styles'))
+      .pipe(livereload());
+});
+
 gulp.task('sass', function() {
   return sass('./src/assets/styles/**/*.scss')
     .pipe(gulp.dest('./dist/assets/styles'))
@@ -43,7 +49,7 @@ gulp.task('images', function() {
       .pipe(gulp.dest('./dist/assets/images'));
 })
 
-gulp.task('build', ['fonts', 'images', 'sass', 'js', 'html'])
+gulp.task('build', ['fonts', 'css', 'images', 'sass', 'js', 'html'])
 
 gulp.task('watch', function() {
   livereload.listen();  // Actually start the LiveReload listener.
