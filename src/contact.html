@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html>
+<head>
+    <!-- Fix for mobile. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Scripts -->
+    <script src="bundle.js"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="assets/styles/contact.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <title>JT Cho</title>
+</head>
+<body>
+{% include 'partials/nav.html' %}
+<main class="container animated fadeIn">
+    <div class="me"></div>
+    <div class="col">
+        <h1>Say Hello!</h1>
+        <p>In addition to my software engineering work, I edit videos, do photography, and academic tutoring on the side.
+        Send me a message if you are interested!</p>
+        <p><em>For business inquiries, please contact me at:</em></p>
+        <p><a href="mailto:jonathan.t.cho@gmail.com">jonathan.t.cho@gmail.com</a></p>
+        <p><em>For academic inquiries, please contact me at:</em></p>
+        <p><a href="mailto:joncho@seas.upenn.edu">joncho@seas.upenn.edu</a></p>
+    </div>
+</main>
+<div class="canvas"></div>
+{% include 'partials/footer.html' %}
+</body>
+</html>

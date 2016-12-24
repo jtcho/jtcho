@@ -21,6 +21,9 @@ app.get('/work', function(req, res) {
 app.get('/projects', function(req, res) {
     res.sendFile(__dirname + '/dist/projects.html');
 });
+app.get('/contact', function(req, res) {
+    res.sendFile(__dirname + '/dist/contact.html');
+});
 app.get('/*', function(req, res) {
     res.sendFile(__dirname + '/dist/index.html');
 })

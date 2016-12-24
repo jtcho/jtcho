@@ -1,0 +1,74 @@
+@import '../../../node_modules/include-media/dist/_include-media.scss';
+
+$breakpoints: (
+        tablet: 800px
+);
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  display : flex;
+  align-items : center;
+
+  .me {
+    background-image: url('../images/contact.jpeg');
+    background-size: cover;
+    width: 400px;
+    height: 280px;
+    opacity: 0.9;
+  }
+
+  .col {
+    margin: 0 auto;
+    padding-left: 40px;
+    flex: 1;
+    h1 {
+      font-family: "Avenir Heavy", Arial, sans-serif;
+      font-weight: 200;
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+    p {
+      font-family: "Avenir Light", Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 100;
+      line-height: 24px;
+    }
+    a {
+      text-decoration: none;
+      color: #1a7d9f;
+      font-weight: 500;
+      opacity: 0.6;
+      transition: 0.5s;
+      font-style: italic;
+    }
+    a:hover {
+      opacity: 1.0;
+    }
+  }
+
+}
+
+@include media("<tablet") {
+  .container {
+    width: 100%;
+    //height: auto;
+    display: block;
+    text-align: center;
+
+    .me {
+      margin: 0 auto;
+      width: 200px;
+      height: 140px;
+      position: relative;
+      top: 40px;
+    }
+
+    .col {
+      position: relative;
+      top: 40px;
+      width: 300px;
+      padding-left: 0;
+    }
+  }
+}
