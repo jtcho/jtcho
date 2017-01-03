@@ -9,7 +9,6 @@ $(document).ready(() => {
 
     $.get(githubEndpoint, (data) => {
         //
-        console.log(data);
         data.forEach((item) => {
             $("#projects").append(`<div class="card"><p>
             <b><a href="${item.html_url}">${item.name}</a></b><br>
