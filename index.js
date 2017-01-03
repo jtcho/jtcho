@@ -24,7 +24,10 @@ app.get('/projects', function(req, res) {
 app.get('/contact', function(req, res) {
     res.sendFile(__dirname + '/dist/contact.html');
 });
+app.get('/feed', function(req, res) {
+    res.sendFile(__dirname + '/dist/feed.html');
+});
 app.get('/*', function(req, res) {
     res.sendFile(__dirname + '/dist/index.html');
-})
+});
 app.listen(8080);

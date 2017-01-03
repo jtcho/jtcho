@@ -26,9 +26,10 @@ gulp.task('js', function() {
     .pipe(babel({
       presets: ['es2015']
     }))
-    .pipe(concat('bundle.js'))
+    // .pipe(concat('bundle.js'))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("./dist"));
+    .pipe(gulp.dest("./dist"))
+    .pipe(livereload());
 });
 
 gulp.task('html', function() {
@@ -54,6 +55,7 @@ gulp.task('build', ['fonts', 'css', 'images', 'sass', 'js', 'html'])
 gulp.task('watch', function() {
   livereload.listen();  // Actually start the LiveReload listener.
   gulp.watch('./src/assets/styles/**/*.scss', ['sass']);
+  gulp.watch('./src/assets/scripts/**/*.js', ['js']);
   gulp.watch('./src/**/*.html', ['html']);
 });
 
@@ -74,8 +76,11 @@ gulp.task('server', function() {
 
 gulp.task('develop', ['build', 'server'], function() {
   livereload.listen();
-  gulp.watch(['./src/assets/styles/**/*.scss', './src/**/*.html'],
-      ['build']);
+  gulp.watch([
+      './src/assets/styles/**/*.scss',
+      './src/**/*.html',
+      './src/**/*.js'
+    ], ['build']);
 });
 
 gulp.task('default', ['build']);
