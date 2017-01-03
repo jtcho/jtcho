@@ -11,11 +11,6 @@ $(document).ready(() => {
         //
         console.log(data);
         data.forEach((item) => {
-            console.log(item);
-            // $("#projects").append("<div class=\"card\"><p>" +
-            //     "<b><a href='" + item.html_url + "'>" + item.name + "</a></b><br>" +
-            //     "<em>" + new Date(item.updated_at).toISOString().slice(0, 10) + "</em>" +
-            //     "</p></div>");
             $("#projects").append(`<div class="card"><p>
             <b><a href="${item.html_url}">${item.name}</a></b><br>
             <em>${formatDate(new Date(item.updated_at))}</em><br>
