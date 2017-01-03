@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    var githubEndpoint = "https://api.github.com/users/jtcho/repos?sort=updated&type=all&page=1&per_page=4";
+    var githubEndpoint = "https://api.github.com/users/jtcho/repos?sort=pushed&type=all&page=1&per_page=4";
 
     function formatDate(date) {
         var dateString = "";
@@ -13,7 +13,7 @@ $(document).ready(() => {
         data.forEach((item) => {
             $("#projects").append(`<div class="card"><p>
             <b><a href="${item.html_url}">${item.name}</a></b><br>
-            <em>${formatDate(new Date(item.updated_at))}</em><br>
+            <em>${formatDate(new Date(item.pushed_at))}</em><br>
             ${item.description}</p>`);
         });
     });
