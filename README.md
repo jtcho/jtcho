@@ -13,3 +13,11 @@ and use Sass/Babel for CSS and ES6 compiling.
 The majority of the website was completed in the span of a day or two – but I'll be tweaking it here and there.
 Since it's so lightweight, I expect that I'll be able to iterate through new website designs whenever I'm bored
 quite quickly! :)
+
+## Development Instructions
+
+#### Dependency Requirements
+
+Node/NPM, obviously. You'll also need `gem install sass` if you don't have it already.
+
+After `npm install`-ing, you can run the `gulp` commands, e.g. `gulp develop` to start a LiveReload server, hosted at `localhost:8080` by default.
